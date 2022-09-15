@@ -1,0 +1,134 @@
+var bardata;
+var lgalist = 
+['All',
+ 'Alpine',
+ 'Ararat',
+ 'Ballarat',
+ 'Banyule',
+ 'Bass Coast',
+ 'Baw Baw',
+ 'Bayside',
+ 'Benalla',
+ 'Boroondara',
+ 'Brimbank',
+ 'Buloke',
+ 'Campaspe',
+ 'Cardinia',
+ 'Casey',
+ 'Central Goldfields',
+ 'Colac-Otway',
+ 'Corangamite',
+ 'Darebin',
+ 'East Gippsland',
+ 'Frankston',
+ 'Gannawarra',
+ 'Glen Eira',
+ 'Glenelg',
+ 'Golden Plains',
+ 'Greater Bendigo',
+ 'Greater Dandenong',
+ 'Greater Geelong',
+ 'Greater Shepparton',
+ 'Hepburn',
+ 'Hindmarsh',
+ 'Hobsons Bay',
+ 'Horsham',
+ 'Hume',
+ 'Indigo',
+ 'Kingston',
+ 'Knox',
+ 'Latrobe',
+ 'Loddon',
+ 'Macedon Ranges',
+ 'Manningham',
+ 'Mansfield',
+ 'Maribyrnong',
+ 'Maroondah',
+ 'Melbourne',
+ 'Melton',
+ 'Mildura',
+ 'Mitchell',
+ 'Moira',
+ 'Monash',
+ 'Moonee Valley',
+ 'Moorabool',
+ 'Moreland',
+ 'Mornington Peninsula',
+ 'Mount Alexander',
+ 'Moyne',
+ 'Murrindindi',
+ 'Nillumbik',
+ 'Northern Grampians',
+ 'Port Phillip',
+ 'Pyrenees',
+ 'Queenscliffe',
+ 'South Gippsland',
+ 'Southern Grampians',
+ 'Stonnington',
+ 'Strathbogie',
+ 'Surf Coast',
+ 'Swan Hill',
+ 'Towong',
+ 'Wangaratta',
+ 'Warrnambool',
+ 'Wellington',
+ 'West Wimmera',
+ 'Whitehorse',
+ 'Whittlesea',
+ 'Wodonga',
+ 'Wyndham',
+ 'Yarra',
+ 'Yarra Ranges',
+ 'Yarriambiack']
+
+
+// Offence_Divisions {
+//   A: A Crimes against the person,
+//   B: B Property and deception offences,
+//   C: C Drug offences,
+//   D: D Public order and security offences,
+//   E: E Justice procedures offences,
+//   F: F Other offences
+// }
+
+// Offence_Sub_Divisions_A_Crimes_against_the_person{
+//   A10: A10 Homicide and related offences,
+//   A20: A20 Assault and related offences,
+//   A30: A30 Sexual offences,
+//   A40: A40 Abduction and related offences,
+//   A50: A50 Robbery,
+//   A60: A60 Blackmail and extortion
+//   A70: A70 Stalking, harassment and threatening behaviour
+//   A80: A80 Dangerous and negligent acts endangering people
+// }
+
+
+// Offence_Sub_Divisions_B Property_and_deception_offences{
+//   B10: B10 Arson,
+//   B20: B20 Property damage,
+//   B30: B30 Burglary/Break and enter,
+//   B40: B40 Theft,
+//   B50: B50 Deception,
+//   B60: A60 B60 Bribery
+// }
+
+// Offence_Sub_Divisions_C_Drug_offences{
+//   C10: C10 Drug dealing and trafficking
+//   C20: C20 Cultivate or manufacture drugs,
+//   C30: C30 Drug use and possession,
+//   C90: C90 Other drug offences,
+// }
+
+// Offence_Sub_Divisions_D_Public_order_and _security_offences{
+//   D10: D10 Weapons and explosives offences,
+//   D20: D20 Disorderly and offensive conduct,
+//   D30: D30 Public nuisance offences
+//   D40: D40 Public security offences,
+// }
+
+// Offence_Sub_Divisions_E Justice procedures offences{
+//   E10: E10 Justice procedures,
+//   E20: E20 Breaches of orders,
+//   D30: D30 Public nuisance offences
+//   D40: D40 Public security offences,
+// }

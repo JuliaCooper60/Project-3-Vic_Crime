@@ -1,0 +1,7 @@
+
+d3.json('../Data/bardata.json').then(data => {
+
+}
+
+
+

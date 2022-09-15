@@ -1,0 +1,58 @@
+
+.node {
+    cursor: pointer;
+  }
+  
+  .node:hover {
+    stroke: #000;
+    stroke-width: 1.5px;
+  }
+  
+  .node--leaf {
+    fill: white;
+  }
+  
+  .label {
+    font: 11px "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-anchor: middle;
+    text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, -1px 0 0 #fff, 0 -1px 0 #fff;
+  }
+  
+  .label,
+  .node--root,
+  .node--leaf {
+    pointer-events: none;
+  }
+
+  body, html{
+    background: #181E24;
+    padding-top: 10px;
+  }
+  
+  .wrapper{
+    width:60%;
+    display:block;
+    overflow:hidden;
+    margin:0 auto;
+    padding: 60px 50px;
+    background:#fff;
+    border-radius:4px;
+  }
+  
+  canvas{
+    background:#fff;
+    height:400px;
+  }
+  
+  h1{
+    font-family: Roboto;
+    color: #fff;
+    margin-top:50px;
+    font-weight:200;
+    text-align: center;
+    display: block;
+    text-decoration: none;
+  }
+  
+  
+  Resources
