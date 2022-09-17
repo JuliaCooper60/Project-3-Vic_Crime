@@ -14,8 +14,8 @@
     <link rel="stylesheet" href="static/CSS/d3Style.css">
     <link rel="stylesheet" href="https://bootswatch.com/4/minty/bootstrap.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
-    crossorigin="anonymous"></script>
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        crossorigin="anonymous"></script>
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
@@ -35,59 +35,68 @@
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
                         <a class="nav-link active" href="indexoffendingpatterns.html">Offending Patterns</a>
-                    </li>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="indexgeographicalboundaries.html">Police Areas by LGA</a>
-                    </li>
+                      </li>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link active" href="indexoffencedivisions2022.html">Offending 2022</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link active" href="indexdifferentcolouredcircles.html">Colored Charts</a>
+                      </li>
                 </ul>
             </div>
         </div>
     </nav>
 
     <!-- Start of container -->
-    
-    <!-- <iframe width=“600” height=“371" seamless frameborder=“0” scrolling=“no” src=“https://docs.google.com/spreadsheets/d/e/2PACX-1vR6VQMj_vmXqKS2Lv0nB6zD0KRopezDrzqIGbgZmN_Pj93je4edWCwYtAoZOEd4ekM7pJ1OAA3hJLOZ/pubchart?oid=68467391&amp;format=interactive”></iframe> -->
-    <h3>Chart JS Stacked Bar example</h3>
+
+    <!-- iframe width=“600” height=“371" seamless frameborder=“0” scrolling=“no” src=“https://docs.google.com/spreadsheets/d/e/2PACX-1vR6VQMj_vmXqKS2Lv0nB6zD0KRopezDrzqIGbgZmN_Pj93je4edWCwYtAoZOEd4ekM7pJ1OAA3hJLOZ/pubchart?oid=68467391&amp;format=interactive”></iframe> -->
+    <h3>Number of incidents by Offence Divisions</h3>
     <div class="wrapper">
-    <canvas id="myChart4"></canvas>
-    </div>
-           
-    <div style="
+        <div style="
+    margin-top: 20pm;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-left: 16px;">
+            <canvas id="myChart"></canvas>
+        </div>
+
+        <div style="
     margin-left: 0px;
     padding-left: 16px;">
-        <div class="col-md-2">
-            <div class="well">
-                <h5>Select LGA:</h5>
-                <select id="selLGA" onchange="optionChanged(this.value)"></select>
-            </div>
-        </div> 
-    </div>
-
-    <div class="row">
-        <div class="col-xs-12  col-md-9">
-
-            <div class="card-body">
-                <h4 class="card-title">Offences by Defence division 2019-2022</h4>
-                <br>
-                <p class="card-text">The aim of this project .....
-                    <br><br>
-                    XXXX
-                    <br><br>
-                    XXXX
-                    <br><br>
-                    XXXX
-                </p>
+            <div class="col-md-2">
+                <div class="well">
+                    <h5>Select LGA:</h5>
+                    <select id="selLGA" onchange="optionChanged(this.value)"></select>
+                </div>
             </div>
         </div>
-    </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
-    crossorigin="anonymous"></script>
-    <script src="https://d3js.org/d3.v7.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="../static/mychart.js"></script>
+        <div class="row">
+            <div class="col-xs-12  col-md-6
+        ">
+
+                <div class="card-body">
+                    <h4 class="card-title">Offences by Defence division 2019-2022</h4>
+                    <br>
+                    <p class="card-text">The aim of this project .....
+                        <br><br>
+                        XXXX
+                        <br><br>
+                        XXXX
+                        <br><br>
+                        XXXX
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+            crossorigin="anonymous"></script>
+        <script src="https://d3js.org/d3.v7.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="../static/mychart.js"></script>
 </body>
 
 </html>

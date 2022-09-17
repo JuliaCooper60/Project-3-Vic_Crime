@@ -7,6 +7,7 @@ chart = {
        .attr("viewBox", `-${width / 2} -${height / 2} ${width} ${height}`)
        .style("display", "block")
        .style("margin", "0 -14px")
+      //  bground colour
        .style("background", color(0))
        .style("cursor", "pointer")
        .on("click", (event) => zoom(event, root));
@@ -15,7 +16,7 @@ chart = {
      .selectAll("circle")
      .data(root.descendants().slice(1))
      .join("circle")
-       .attr("fill", d => d.children ? color(d.depth) : "white")
+       .attr("fill", d => d.children ? color(d.depth) : "blue")
        .attr("pointer-events", d => !d.children ? "none" : null)
        .on("mouseover", function() { d3.select(this).attr("stroke", "#000"); })
        .on("mouseout", function() { d3.select(this).attr("stroke", null); })

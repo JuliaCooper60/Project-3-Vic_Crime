@@ -25,18 +25,28 @@
   }
 
   .node:hover {
-    stroke: #000;
-    stroke-width: 1.5px;
+    stroke: rgb(4, 255, 0);
+    stroke-width: 8.5px;
   }
 
   .node--leaf {
-    fill: white;
+    fill: rgb(255, 0, 0);
   }
 
-  .label {
-    font: 11px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  .node--root { 
+    fill:rgb(115, 0, 255);
+  }
+
+  .textnode {
+    font: 30px "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-anchor: middle;
-    text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, -1px 0 0 #fff, 0 -1px 0 #fff;
+    text-shadow: 0 2px 0 #fff, 1px 0 0 #fff, -1px 0 0 #fff, 0 -1px 0 #fff;
+  }
+
+  .textnode--leaf {
+    font: 30px "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-anchor: middle;
+    text-shadow: 0 2px 0 #fff, 1px 0 0 #fff, -1px 0 0 #fff, 0 -1px 0 #fff;
   }
 
   .label,
@@ -49,7 +59,7 @@
 <body>
   <nav class="navbar navbar-expand-lg bg-light">
     <div class="container-fluid">
-      <a class="navbar-brand" href="indexcrime.html">Crime in Victoria 2019-2022</a>
+      <a class="navbar-brand" href="indexcrime.html">Crime in Victoria by offence Divisions</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -61,7 +71,10 @@
           </li>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="indexgeographicalboundaries.html">Police Areas by LGA</a>
+            <a class="nav-link active" href="indexoffencedivisions2022.html">Offending 2022</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="indexdifferentcolouredcircles.html">Colored Charts</a>
           </li>
         </ul>
       </div>
@@ -87,7 +100,7 @@
       .size([diameter - margin, diameter - margin])
       .padding(2);
 
-    d3.json("../static/flare.json", function (error, root) {
+    d3.json("static/flare.json", function (error, root) {
       if (error) throw error;
 
       root = d3.hierarchy(root)
@@ -108,7 +121,7 @@
       var text = g.selectAll("text")
         .data(nodes)
         .enter().append("text")
-        .attr("class", "label")
+        .attr("class", function (d) { return d.parent ? d.children ? "textnode" : "node textnode--leaf" : "node textnode--root"; })
         .style("fill-opacity", function (d) { return d.parent === root ? 1 : 0; })
         .style("display", function (d) { return d.parent === root ? "inline" : "none"; })
         .text(function (d) { return d.data.name; });
@@ -116,7 +129,7 @@
       var node = g.selectAll("circle,text");
 
       svg
-        .style("background", color(-1))
+        .style("background", color(0))
         .on("click", function () { zoom(root); });
 
       zoomTo([root.x, root.y, root.r * 2 + margin]);

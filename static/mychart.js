@@ -81,34 +81,29 @@ var lgalist =
  'Yarra Ranges',
  'Yarriambiack']
 
+ d3.json('../Data/bardata.json').then((barData) => {
 
-
-   // build bubble chart 
-
-   
-
-   var dataBubble = [
+  barDataFull = barData;
+  bardata = barData.Alpine;
+  var ctx = document.getElementById('myChart').getContext('2d');
+  var lgaselect = document.getElementById('selLGA');
+  myChart = new Chart(ctx, 
     {
-        x: ids,
-        y: values,
-        text: labels,
-        mode: "markers",
-        marker: {
-            color: ids,
-            size: values,
-        }
-    }
-];
+  data: bardata,
+  type: 'bar',
+  responsive:true,
+  scales: {
+    x:{
+      stacked:true
+  },
+    y:{
+      stacked:true
+    },
 
-var layoutBubble = {
-    margin: { t: 0 },
-    xaxis: { title: "OTU (Operational Taxonomic Unit)ID from Sample" },
-    hovermode: "closest",
-};
-Plotly.newPlot("bubble", dataBubble, layoutBubble);
+  }
 
+  });
 
- var lgaselect = document.getElementById('selLGA');
 
 for (i=0; i< lgalist.length; i++)
 {
@@ -117,13 +112,114 @@ var opt = document.createElement("option");
   lgaselect.add(opt); //[i].text = lgalist[i];
 }
 
-bardata = barData;
-d3.json('../Data/bardata.json').then((barData) => {
-  var myChart = new Chart(d3.select('#myChart')
+lgaselect.selectedIndex = 0;
 
-  var ctx = document.getElementById('myChart').getContext('2d');
+  });
 
-  })
+
+function optionChanged(sValue)
+{
+	bardata = barDataFull[sValue];
+	myChart.data = bardata;
+	myChart.update();
+}
+
+
+
+
+//  d3.json('../Data/bardata.json').then((barData) => {
+
+//   bardata = barData.Alpine;
+//   var ctx = document.getElementById('myChart').getContext('2d');
+//   var lgaselect = document.getElementById('selLGA');
+//   var myChart = new Chart(ctx, 
+//     {
+//   data: bardata,
+//   type: 'bar',
+//   responsive:true,
+//   scales: {
+//     x:{
+//       stacked:true
+//   },
+//     y:{
+//       stacked:true
+//     },
+
+//   }
+
+//   });
+
+
+
+// for (i=0; i< lgalist.length; i++)
+// {
+// var opt = document.createElement("option");
+//   opt.text = lgalist[i];
+//   lgaselect.add(opt); //[i].text = lgalist[i];
+// }
+
+//   });
+
+  
+
+//  var lgaselect = document.getElementById('selLGA');
+
+// for (i=0; i< lgalist.length; i++)
+// {
+// var opt = document.createElement("option");
+//   opt.text = lgalist[i];
+//   lgaselect.add(opt); //[i].text = lgalist[i];
+// }
+
+// d3.json("../data/bardata.json").then((barData) => {
+//   var lga = barData.lga
+//   console.log(names);
+//   var selecttag = d3.select("selbarData")
+//   // create drop down list 
+//   for (var i = 0; i < names.length; i++) {
+//       selecttag.append("option").text(names[i]).property("value", names[i])
+//   };
+// })
+// //  Create table 
+// function buildMetadata(lga) {
+//   d3.json("data/barData.json").then((barData) => {
+//       var metadata = barData.metadata;
+//       console.log(metadata);
+//       var results = metadata.filter(obj => obj.id == lga)[0];
+
+//       var panel = d3.select("#barData-metadata");
+//       panel.html("");
+//       for (key in results) {
+//           panel.append("h6").text(`${key}; ${results[key]}`);
+//       };
+//   });
+// }
+// // Build charts 
+// function buildCharts(id) {
+//   d3.json("data/samples.json").then((sampleData) => {
+//       var samples = sampleData.samples;
+//       var metadata = sampleData.metadata
+//       var results_metadata = metadata.filter(x=>x.id === parseInt(id))[0]
+//       console.log(samples);
+//       var results = samples.filter(obj => obj.id === id)[0];
+//       var ids = results.otu_ids;
+//       var labels = results.otu_labels;
+//       var values = results.sample_values;
+
+
+//       var barSampleData = [
+//           {
+//               y: ids.slice(0, 10).map(otuID => `OTU ${otuID}`).reverse(),
+//               x: values.slice(0, 10).reverse(),
+//               text: labels.slice(0, 10).reverse(),
+//               type: "bar",
+//               orientation: "h"
+//           }
+//       ];
+
+
+
+  
     
 // d3.json("data/samples.json").then((sampleData) => {
 //   var names = sampleData.names
@@ -157,18 +253,7 @@ d3.json('../Data/bardata.json').then((barData) => {
 //d3.select('#myChart').getContext('2d')
 
 
-  type:'bar',
-  'data'; 'bardata',
-  'scales'; {
-    xAxes:[{
-      stacked:true
-    }],
-    'yAxes';[{
-      stacked:true
-    }]
-  };
-  responseive:true
-
+  
 
 // function optionChanged(sender)
 // {
