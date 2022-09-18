@@ -33,8 +33,8 @@
     fill: rgb(255, 0, 0);
   }
 
-  .node--root { 
-    fill:rgb(115, 0, 255);
+  .node--root {
+    fill: rgb(115, 0, 255);
   }
 
   .textnode {
@@ -58,32 +58,37 @@
 
 
 <body>
-    <nav class="navbar navbar-expand-lg bg-light">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="indexcrime.html">Crime in Victoria 2019-2022</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse spacing" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-                <a class="nav-link active" href="indexoffendingpatterns.html">Offending Patterns</a>
-              </li>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" href="indexoffencedivisions2022.html">Offending 2022</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" href="indexdifferentcolouredcircles.html">Colored Charts</a>
-              </li>
-          </ul>
-        </div>
+  <nav class="navbar navbar-expand-lg bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="indexcrime.html">Crime in Victoria 2019-2022</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse spacing" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" href="indexoffendingpatterns.html">Offending Patterns</a>
+          </li>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="indexoffencedivisions2022.html">Offending 2022</a>
+          </li>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="indexoffencedivisions2021.html">Offending 2022</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="indexdifferentcolouredcircles.html">Colored Charts</a>
+          </li>
+        </ul>
       </div>
-    </nav>
-  
-  
-    <svg width="1400" height="1400"></svg>
+    </div>
+  </nav>
+
+
+
+  <!-- <svg width="1400" height="1400"></svg>
     <script src="https://d3js.org/d3.v4.min.js"></script>
     <script>
   
@@ -118,6 +123,15 @@
           .attr("class", function (d) { return d.parent ? d.children ? "node" : "node node--leaf" : "node node--root"; })
           .style("fill", function (d) { return d.children ? color(d.depth) : null; })
           .on("click", function (d) { if (focus !== d) zoom(d), d3.event.stopPropagation(); });
+
+            
+          // function setColorScheme(multi){
+          //   if (multi) {
+          //     let color = d3.scaleOrdinal()
+          //       .range(d3.schemeCategory10)
+          //     return color;
+          //   }
+
   
         var text = g.selectAll("text")
           .data(nodes)
@@ -183,16 +197,16 @@
   
   //     return circlesGroup;
   // }
-  
-  
-  
-    </script>
-    
-    </body>
-  
-    <div style="position:absolute; bottom: 0; width:100%; height:60px;" >
-      <p>Xxxxxxxxxxxxxx</p>
-      <!-- boostrp and look for footers fpr minty  -->
-    </div>
-  
-    </html>
+   -->
+
+
+  </script>
+
+</body>
+
+<div style="position:absolute; bottom: 0; width:100%; height:60px;">
+  <p>Xxxxxxxxxxxxxx</p>
+  <!-- boostrp and look for footers fpr minty  -->
+</div>
+
+</html>

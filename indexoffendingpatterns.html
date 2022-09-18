@@ -25,16 +25,16 @@
   }
 
   .node:hover {
-    stroke: rgb(4, 255, 0);
+    stroke: rgb(25, 25, 112);
     stroke-width: 8.5px;
   }
 
   .node--leaf {
-    fill: rgb(255, 0, 0);
+    fill: rgb(255, 255, 255);
   }
 
-  .node--root { 
-    fill:rgb(115, 0, 255);
+  .node--root {
+    fill: rgb(115, 0, 255);
   }
 
   .textnode {
@@ -67,11 +67,13 @@
       <div class="collapse navbar-collapse spacing" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" href="indexoffendingpatterns.html">Offending Patterns</a>
-          </li>
+            <a class="nav-link active" href="indexoffendingpatterns.html">Offending Patterns 2019-2022</a>
           </li>
           <li class="nav-item">
             <a class="nav-link active" href="indexoffencedivisions2022.html">Offending 2022</a>
+          </li>
+          <li class="nav-item">
+          <a class="nav-link active" href="indexoffencedivisions2022.html">Offending 2021</a>
           </li>
           <li class="nav-item">
             <a class="nav-link active" href="indexdifferentcolouredcircles.html">Colored Charts</a>
@@ -163,35 +165,39 @@
         });
         circle.attr("r", function (d) { return d.r * k; });
       }
+
+
+      var toolTip = d3.tip()
+        .attr("class", "tooltip")
+        .offset([85, -90])
+        .html(function (d) {
+          return (`${d.year}<br>${d.OffenceDivision}<br>${d.OffenceSubdivision}<br>${d.value}`);
+        });
+
+      circlesGroup.call(toolTip);
+
+      circlesGroup.on("mouseover", (d, i, n) => toolTip.show(d, n[i]));
+      circlesGroup.on("mouseout", (d, i, n) => toolTip.hide(d, n[i]));
+
+      return circlesGroup;
+
     });
 
 
 
 
-//     var toolTip = d3.tip()
-//       .attr("class", "tooltip")
-//       .offset([85, -90])
-//       .html(function (d) {
-//         return (`${d.state}<br>${yLabel}: ${d[chosenYAxis]}<br>${xLabel}: ${d[chosenXAxis]}`);
-//       });
 
-//     circlesGroup.call(toolTip);
 
-//     circlesGroup.on("mouseover", (d, i, n) => toolTip.show(d, n[i]));
-//     circlesGroup.on("mouseout", (d, i, n) => toolTip.hide(d, n[i]));
-
-//     return circlesGroup;
-// }
 
 
 
   </script>
-  
-  </body>
 
-  <div style="position:absolute; bottom: 0; width:100%; height:60px;" >
-    <p>Xxxxxxxxxxxxxx</p>
-    <!-- boostrp and look for footers fpr minty  -->
-  </div>
+</body>
 
-  </html>
+<div style="position:absolute; bottom: 0; width:100%; height:60px;">
+  <p>Xxxxxxxxxxxxxx</p>
+  <!-- boostrp and look for footers fpr minty  -->
+</div>
+
+</html>

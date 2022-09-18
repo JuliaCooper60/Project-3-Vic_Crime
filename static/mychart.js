@@ -84,7 +84,7 @@ var lgalist =
  d3.json('../Data/bardata.json').then((barData) => {
 
   barDataFull = barData;
-  bardata = barData.Alpine;
+  bardata = barData.All;
   var ctx = document.getElementById('myChart').getContext('2d');
   var lgaselect = document.getElementById('selLGA');
   myChart = new Chart(ctx, 

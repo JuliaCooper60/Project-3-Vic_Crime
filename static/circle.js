@@ -1,3 +1,13 @@
+
+d3.json(' static/flare.json').then((flare) => {
+ 
+  barDataFull = barData;
+  bardata = barData.All;
+  var ctx = document.getElementById('myChart').getContext('2d');
+  var lgaselect = document.getElementById('selLGA');
+  myChart = new Chart(ctx, 
+    {
+
 chart = {
    const root = pack(data);
    let focus = root;
